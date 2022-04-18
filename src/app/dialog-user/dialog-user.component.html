@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Add User</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Your Firstname</mat-label>
+            <input matInput placeholder="Firstname">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Your Familyname</mat-label>
+            <input matInput placeholder="Familyname">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Your Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Birth Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Your Street + House No.</mat-label>
+            <input matInput placeholder="Adress">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="mr-16" appearance="outline">
+        <mat-label>Your Zip Code</mat-label>
+        <input matInput placeholder="Zip Code">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Your City</mat-label>
+        <input matInput placeholder="City">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial>Save</button>
+</div>

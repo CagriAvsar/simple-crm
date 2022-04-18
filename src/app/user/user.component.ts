@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogUserComponent } from '../dialog-user/dialog-user.component';
+
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    public dialog: MatDialog,
+    ) { }
 
   ngOnInit(): void {
   }
+
+  openDialog() {
+    this.dialog.open(DialogUserComponent);
+   }
 
 }
