@@ -1,0 +1,53 @@
+mat-drawer-container {
+    height: 100vh;
+}
+
+mat-toolbar,
+mat-toolbar-row {
+    min-height: 56px;
+    height: 56px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.sidenav {
+    width: 300px;
+}
+
+.logo-container {
+    border-bottom: solid 1px rgba($color: #fff, $alpha: 0.5);
+    padding: 0 16px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        padding-left: 16px;
+        display: flex;
+        align-items: center;
+        height: 48px;
+        cursor: pointer;
+        transition: all 125ms ease-in-out;
+        mat-icon {
+            margin-right: 16px;
+        }
+        &:hover {
+            background-color: rgba($color: #ffff, $alpha: 0.05);
+        }
+        &:focus {
+            background-color: rgba($color: #ffff, $alpha: 0.05);
+        }
+    }
+}
+
+.router-container {
+    padding: 16px 0 0 16px;
+}
