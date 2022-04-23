@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { User } from 'src/models/user.class';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog-user.component.scss']
 })
 export class DialogUserComponent implements OnInit {
+
+  user = new User();
+  birthDateAsTimeStamp!: Date;
 
   constructor(
     public dialogRef: MatDialogRef<DialogUserComponent>
@@ -18,6 +22,11 @@ export class DialogUserComponent implements OnInit {
 
   onNoClick() {
     this.dialogRef.close(DialogUserComponent);
+  }
+
+  saveUserInfo() {
+    this.user.birthDate = this.birthDateAsTimeStamp.getTime();
+    console.log('Added USER', this.user);
   }
 
 }
