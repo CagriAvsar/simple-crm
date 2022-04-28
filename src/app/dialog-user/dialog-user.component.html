@@ -1,15 +1,21 @@
 <h1 mat-dialog-title>Add User</h1>
+
 <div mat-dialog-content>
     <div>
+
+        <div class="spinner-container" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+        </div>
+
         <mat-form-field class="mr-16" appearance="outline">
             <mat-label>Your Firstname</mat-label>
-            <input [(ngModel)]="user.firstName" matInput placeholder="Firstname" required>
+            <input [(ngModel)]="user.firstName" matInput placeholder="Firstname" required [disabled]="loading">
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Your Familyname</mat-label>
-            <input [(ngModel)]="user.lastName" matInput placeholder="Last Name" required>
+            <input [(ngModel)]="user.lastName" matInput placeholder="Last Name" required [disabled]="loading">
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
     </div>
@@ -17,7 +23,7 @@
     <div>
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Your Birth Date</mat-label>
-            <input [(ngModel)]="birthDateAsTimeStamp" matInput [matDatepicker]="picker" placeholder="Birth Date" required>
+            <input [(ngModel)]="birthDateAsTimeStamp" matInput [matDatepicker]="picker" placeholder="Birth Date" required [disabled]="loading">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
@@ -27,26 +33,26 @@
     <div>
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Your Street + House No.</mat-label>
-            <input [(ngModel)]="user.street" matInput placeholder="Adress" required>
+            <input [(ngModel)]="user.street" matInput placeholder="Adress" required [disabled]="loading">
             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
         </mat-form-field>
     </div>
 
     <mat-form-field class="mr-16" appearance="outline">
         <mat-label>Your Zip Code</mat-label>
-        <input [(ngModel)]="user.zipCode" matInput placeholder="Zip Code" required>
+        <input [(ngModel)]="user.zipCode" matInput placeholder="Zip Code" required [disabled]="loading">
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Your City</mat-label>
-        <input [(ngModel)]="user.city" matInput placeholder="City" required>
+        <input [(ngModel)]="user.city" matInput placeholder="City" required [disabled]="loading">
         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     </mat-form-field>
 
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button cdkFocusInitial (click)="saveUserInfo()">Save</button>
+    <button mat-button [disabled]="loading" (click)="onNoClick()">Cancel</button>
+    <button mat-button [disabled]="loading" cdkFocusInitial (click)="saveUserInfo()">Save</button>
 </div>
