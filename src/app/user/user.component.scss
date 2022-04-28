@@ -1,3 +1,76 @@
+.mat-card {
+    padding: 16px 0 16px 0;
+}
+
+.table-user {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        border-bottom: solid 1.5px rgba($color: #6969695e, $alpha: 0.4);
+        cursor: pointer;
+        &:first-child {
+            cursor: unset;
+        }
+        &:hover {
+            background-color: #6969695e;
+            &:first-child {
+                background-color: unset;
+            }
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+        td {
+            height: 50px;
+            &:first-child {
+                padding-left: 16px;
+            }
+        }
+    }
+    th {
+        color: #ffffff96;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: start;
+        &:first-child {
+            padding-left: 16px;
+        }
+    }
+}
+
+// .table-user {
+//     width: 100%;
+//     border-collapse: collapse;
+//     th {
+//         color: #ffffff96;
+//         text-align: start;
+//         border-bottom: solid 1.5px rgba($color: #6969695e, $alpha: 0.4);
+//         &:first-child {
+//             padding-left: 16px;
+//         }
+//         tr {
+//             border-bottom: solid 1.5px rgba($color: #6969695e, $alpha: 0.4);
+//             cursor: pointer;
+//         }
+//         td {
+//             height: 50px;
+//         }
+//     }
+//     tr {
+// td {
+//     height: 50px;
+//     border-bottom: solid 1.5px rgba($color: #6969695e, $alpha: 0.4);
+//     cursor: pointer;
+//     &:first-child {
+//         padding-left: 16px;
+//     }
+// }
+//        
+//     }
+//     &:last-child {
+//         border-bottom: 0;
+//     }
+// }
 .add-btn-container {
     position: absolute;
     bottom: 32px;
