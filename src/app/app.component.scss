@@ -26,15 +26,23 @@ mat-toolbar-row {
     align-items: center;
     justify-content: center;
     img {
-        height: 100px;
+        height: 55px;
         object-fit: cover;
+        margin-right: 2px;
+    }
+    span {
+        border-bottom: solid 1px;
+    }
+    .connect-them {
+        margin-top: 5px;
     }
     .we-letter {
         color: var(--side-color);
         font-size: 18px;
         position: absolute;
-        top: 20px;
+        top: 10px;
         font-weight: 600;
+        border: none;
     }
 }
 

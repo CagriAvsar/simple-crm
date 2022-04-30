@@ -25,9 +25,9 @@ export class DialogUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick() {
-    this.dialogRef.close(DialogUserComponent);
-  }
+  // onNoClick() {
+  //   this.dialogRef.close(DialogUserComponent);
+  // }
 
   saveUserInfo() {
     this.user.birthDate = this.birthDateAsTimeStamp.getTime();
@@ -37,10 +37,10 @@ export class DialogUserComponent implements OnInit {
     this.firestore
     .collection('user')
     .add(this.user.toJson())
-    .then( (result)=> {
+    .then((result)=> {
       this.loading = false;
       console.log('USER IN FIRE', result);
-      this.dialogRef.close(DialogUserComponent);
+      this.dialogRef.close();
     })
   }
 

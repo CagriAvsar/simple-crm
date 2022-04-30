@@ -5,17 +5,12 @@
             <th>E-Mail</th>
             <th>Adress</th>
         </tr>
-        <tr>
-            <td>Cagri Avsar</td>
-            <td>c.avsar@hotmail.com</td>
-            <td>Am Pistorhof 8</td>
+        <tr *ngFor="let user of allUsers">
+            <td>{{ user.firstName }} {{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.street }}</td>
         </tr>
 
-        <tr>
-            <td>Ali Ahmad</td>
-            <td>ali-ahmad@gmail.de</td>
-            <td>Am Kieler Damm 18</td>
-        </tr>
     </table>
 </mat-card>
 
