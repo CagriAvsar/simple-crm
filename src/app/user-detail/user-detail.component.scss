@@ -1,0 +1,27 @@
+.user-details-header {
+    height: 250px;
+    background-color: var(--side-color);
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    img {
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        border-radius: 100%;
+        background-color: #fff;
+        box-shadow: 1px 1px 10px 0px black;
+    }
+}
+
+.user-details {
+    margin-left: 25px;
+    font-size: 16px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        margin-bottom: 0;
+    }
+}

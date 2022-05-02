@@ -21,12 +21,12 @@ export class UserComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.fs.collection('user')
-    .valueChanges()
+    this.fs
+    .collection('user')
+    .valueChanges( {idField: 'userId'} )
     .subscribe((newUser:any) => {
-      this.allUsers = newUser; // WHY NOT PUSH ???
+      this.allUsers = newUser; // Set a new Array
       console.log('NEWUSER', newUser);
-      
     })
   }
 

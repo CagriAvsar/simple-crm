@@ -27,6 +27,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -40,7 +41,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AppComponent,
     UserComponent,
     DashboardComponent,
-    DialogUserComponent
+    DialogUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
