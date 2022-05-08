@@ -1,13 +1,17 @@
 <mat-card class="user-details-header">
     <img src="assets/imgs/profile-img.png">
     <div class="user-details">
-        <h2>Name Nachname</h2><br> email@gmail.de
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2><br> {{ user.email }}
     </div>
 </mat-card>
 
-<mat-card class="mt-32">
+<mat-card class="mt-16">
+    <button mat-icon-button class="top-right-corner">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
     <mat-card-title>Adress</mat-card-title>
     <mat-card-content>
-        Muster Straße 23 <br> 50525 Cologne
+        {{ user.street }} <br> {{ user.city }} {{ user.zipCode }}
     </mat-card-content>
 </mat-card>

@@ -13,7 +13,7 @@ import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 export class UserComponent implements OnInit {
 
   user:any = new User();
-  allUsers:any = []
+  allUsers:any = [];
 
   constructor( 
     public dialog: MatDialog,
