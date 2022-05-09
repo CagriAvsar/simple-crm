@@ -1,4 +1,19 @@
 <mat-card class="user-details-header">
+
+
+    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="menu">
+        <mat-icon more_vert mat-buttonclass="top-right-corner">more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openEditUser()">
+                <mat-icon class="material-symbols-outlined">
+                    drive_file_rename_outline
+                </mat-icon>
+                Edit user
+            </button>
+    </mat-menu>
+
     <img src="assets/imgs/profile-img.png">
     <div class="user-details">
         <h2>{{ user.firstName }} {{ user.lastName }}</h2><br> {{ user.email }}
@@ -6,9 +21,27 @@
 </mat-card>
 
 <mat-card class="mt-16">
-    <button mat-icon-button class="top-right-corner">
+
+    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="menu">
+            <mat-icon more_vert mat-buttonclass="top-right-corner">more_vert</mat-icon>
+        </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openEditAddress()">
+                    <mat-icon class="material-symbols-outlined">
+                        drive_file_rename_outline
+                    </mat-icon>
+                    Edit address
+                </button>
+    </mat-menu>
+
+
+
+
+
+    <!-- <button mat-icon-button class="top-right-corner">
         <mat-icon>more_vert</mat-icon>
-    </button>
+    </button> -->
 
     <mat-card-title>Adress</mat-card-title>
     <mat-card-content>

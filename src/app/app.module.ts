@@ -28,6 +28,10 @@ import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+
 
 
 
@@ -42,7 +46,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UserComponent,
     DashboardComponent,
     DialogUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DialogEditUserComponent,
+    DialogEditAddressComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +70,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     AngularFireAnalyticsModule,
     AngularFireModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
