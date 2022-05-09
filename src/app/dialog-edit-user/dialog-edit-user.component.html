@@ -1,1 +1,46 @@
-<p>USER</p>
+<h1 mat-dialog-title>Edit user</h1>
+
+<div mat-dialog-content>
+    <div>
+
+        <div class="spinner-container" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+        </div>
+
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Your Firstname</mat-label>
+            <input [(ngModel)]="user.firstName" matInput placeholder="Firstname" required [disabled]="loading">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Your Familyname</mat-label>
+            <input [(ngModel)]="user.lastName" matInput placeholder="Last Name" required [disabled]="loading">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Your Email</mat-label>
+            <input [(ngModel)]="user.email" type="email" matInput placeholder="Email" required [disabled]="loading">
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Your Birth Date</mat-label>
+            <input [(ngModel)]="birthDateAsTimeStamp" matInput [matDatepicker]="picker" placeholder="Birth Date" required [disabled]="loading">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+    </div>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [disabled]="loading" (click)=" this.dialogRef.close()">Cancel</button>
+    <button mat-button [disabled]="loading" cdkFocusInitial (click)="editUser()">Save</button>
+</div>

@@ -1,11 +1,10 @@
 <mat-card class="user-details-header">
 
-
-    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="menu">
+    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="userMenu">
         <mat-icon more_vert mat-buttonclass="top-right-corner">more_vert</mat-icon>
     </button>
 
-    <mat-menu #menu="matMenu">
+    <mat-menu #userMenu="matMenu">
         <button mat-menu-item (click)="openEditUser()">
                 <mat-icon class="material-symbols-outlined">
                     drive_file_rename_outline
@@ -22,11 +21,11 @@
 
 <mat-card class="mt-16">
 
-    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="menu">
+    <button mat-icon-button class="top-right-corner" [matMenuTriggerFor]="addressMenu">
             <mat-icon more_vert mat-buttonclass="top-right-corner">more_vert</mat-icon>
         </button>
 
-    <mat-menu #menu="matMenu">
+    <mat-menu #addressMenu="matMenu">
         <button mat-menu-item (click)="openEditAddress()">
                     <mat-icon class="material-symbols-outlined">
                         drive_file_rename_outline

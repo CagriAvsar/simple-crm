@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/models/user.class';
 import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
-import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -36,18 +35,22 @@ export class UserDetailComponent implements OnInit {
     .collection('user')
     .doc(this.userID)
     .valueChanges(this.user)
-    .subscribe( (user)=> {
+    .subscribe( (user) => {
       console.log(user);
       this.user = new User(user);
     })
   }
 
   openEditUser() {
-    this.dialog.open(DialogEditUserComponent);
+    const dialog = this.dialog.open(DialogEditUserComponent);
+    dialog.componentInstance.user = new User(this.user.toJson()); //copy the variable user
+    dialog.componentInstance.userID = this.userID;
   }
 
   openEditAddress() {
-    this.dialog.open(DialogEditAddressComponent);
-  }
+    const dialog = this.dialog.open(DialogEditAddressComponent);
+    dialog.componentInstance.user = new User(this.user.toJson()); //copy the vaiable user
+    dialog.componentInstance.userID = this.userID;
+    }
 
 }
